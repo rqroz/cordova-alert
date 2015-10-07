@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    id="com-spmt-rqueiroz-Alert"
+    version="0.0.1">
+    <name>Alert</name>
+    <description>Plugin test -> triggers the native alert function</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,Alert</keywords>
+    <engines>
+        <engine name="cordova" version=">=3.6.0"/>
+    </engines>
+
+    <js-module src="www/Alert.js" name="Alert">
+        <clobbers target="cdv.plugin.Alert" />
+    </js-module>
+
+    
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Alert">
+                <param name="ios-package" value="Alert" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/Alert.h" />
+        <source-file src="src/ios/Alert.m" />
+        
+        <!-- <framework src="MessageUI.framework" /> -->
+    </platform>
+
+</plugin>
